@@ -6,7 +6,19 @@ import java.util.Arrays;
 public class Solution {
 
     static boolean isAnagram(String a, String b) {
-       if(
+       if(a.length()!=b.length()){
+           ret = false;
+       }
+        else{
+         char[] arrA= a.toLowerCase().toCharArray();//convert to lowercase or uppercase for sorting of the characters
+         char[] arrB=b.toLowerCase().toCharArray();
+            Arrays.sort(arrA);
+            Arrays.sort(arrB);
+            ret = Arrays.equals(arrA,arrB);
+            
+            //if you want to ignore the toLowerCase() in the above character array formation then in the above line use:->
+            //ret = Arrays.equalsIgnoreCase(arrA,arrB);
+        }
        }
   public static void main(String[] args) {
     
