@@ -1,3 +1,14 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    // Complete the cavityMap function below.
     static String[] cavityMap(String[] grid) {
         int[][] arr=new int[grid.length][grid.length];
         String[] result= new String[grid.length];
@@ -24,7 +35,7 @@
             for(int j=0;j<m;j++){
                 if(arr[i][j]==-1)
                     s=s+"X";
-                    else
+                else
                 s=s+Integer.toString(arr[i][j]);
             }
             result[i]=s;
@@ -32,5 +43,25 @@
         }
         return result;
     }
-    
+
+
+    public static void main(String[] args)  {
+
+        int n = 4;
+
+        String[] grid ={"1112", "1912", "1892", "1234"};
+
+
+        String[] result = cavityMap(grid);
+
+        for (int i = 0; i < result.length; i++) {
+            System.out.print(result[i]);
+
+            if (i != result.length - 1) {
+                System.out.print("\n");
+            }
+        }
+    }
+}
+
     //https://www.hackerrank.com/challenges/cavity-map/problem
